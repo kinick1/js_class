@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="number">0</p>
+    <button id="btn1">1증가</button>
+    <button id="btn2">1감소</button>
+    <script>
+        // 1. 각각버튼에 연결시켜줄 함수 2개 제작
+        // 2. 버튼에 각각 함수를 연결
+        // 3. +버튼을 클릭시 p태그 내용을 가져와서 1씩 증가
+        // 4. -버튼을 클릭시 p태그 내용을 가져와서 1씩 감소
+        // 5. 숫자가 0일땐 더이상 감소하지 않도록
+        let num=Number(document.getElementById("number").innerText)
+        const plus=()=>{
+            document.getElementById("number").innerText= ++num
+        }
+        document.getElementById("btn1").addEventListener("click",plus)
+        
+        const minus=()=>{
+            if(num==0){
+                alert("더 이상 뺄수 없습니다")
+            }
+            else{
+                document.getElementById("number").innerText= --num
+            }
+        }
+        document.getElementById("btn2").addEventListener("click",minus)
+
+    </script>
+</body>
+</html>

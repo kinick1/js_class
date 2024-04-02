@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 객체 -> 여러 데이터를 담는 데이터 바구니
+        // 기본 구조 -> Key : Value
+        // 장점 : key값을 꺼냈을 때 무슨 데이터인지 유추할 수 있다.
+        // ★★★ -> 여러 의미를 가진 데이터를 담아줄 수 있다. <-> 배열 ★★★
+        // 사람 객체를 생성 -> 이름, 나이, 성별
+        let person={
+            name:"kimjun",
+            age:25,
+            gender:"male",
+            Education:["남평초","남평중","금성고",{No:20183307,collage:"dicon"}]
+        }
+
+        // 조회 방법 ! 객체 이름.Key
+        person.name;
+        // 객체 데이터를 조회할 때는 두가지만 기억할 것!
+        // ★★★ 데이터의 구조가 아무리 복잡해도 객체 -> key, 배열 -> 인덱스 ★★★
+        person.Education[3].collage
+    </script>
+    
+</body>
+</html>

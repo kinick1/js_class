@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="img" src="/img/주머니괴물1.jpg" alt="">
+    <button id="btn">진화</button>
+
+    <script>
+
+
+        const imgChange=()=>{
+            document.getElementById("img").getAttribute("src")
+            document.getElementById("img").src="/img/주머니괴물2.jpg"
+        }
+        document.getElementById("btn").addEventListener("click",imgChange)
+    </script>
+</body>
+</html>

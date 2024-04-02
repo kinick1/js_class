@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수 -> 특정 로직을 묶어서 필요할 때 마다 호출하는 방법
+        // 이름() -> 함수
+        // 함수 선언식
+        function plus(a,b){
+            // 함수를 호출 할 때 필요한 코드
+            console.log(a+b);
+        }
+        function minus(a,b){
+            return a-b;
+        }
+        plus(1,5);    // 숫자와 문자가 대입되어 합연산을 진행 시 문자열로 출력해준다. 
+        let result=minus(10,5);
+        console.log(result);
+
+        // 함수 표현식
+        const add=function(){
+            return a+b;
+        }
+        add()
+
+        // 에로우 펑션 -> 함수 표현식을 짧게 쓰는 방식
+        const arrow=()=>{
+            
+        }
+    </script>
+</body>
+</html>

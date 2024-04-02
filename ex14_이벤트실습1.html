@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>클릭해보라우</h1>
+    <div id="area"></div>
+    <button id="btn1">h1태그 생성</button>
+    <button id="btn2">a태그 생성</button>
+    <button id="btn3">ul태그 생성</button>
+    
+    <script>
+    // 태그를 생성하는 버튼을 클릭 시
+    // 내용이 출력되는 페이지를 만드시오
+
+    // 프로세스
+    // 1. 각각 버튼에 사용할 함수 제작
+    // 2. 만든 함수와 각각의 버튼을 연결 -> addEventListner
+    // 3. 각각 함수의 기능정의 -> 버튼을 클릭했을때 해당하는 태그로 내용을 생성
+    // 주의점! 비어있는 div에 생성한 글자가 누적되서 출력
+    const createH1tag=()=>{
+            document.getElementById("area").innerHTML += "<h1>h1태그 생성</h1>";
+        }
+    document.getElementById("btn1").addEventListener("click",createH1tag)
+
+    const createAtag=()=>{
+            document.getElementById("area").innerHTML +="<a href='naver.com'>네이버</a><br>";
+        }
+    document.getElementById("btn2").addEventListener("click",createAtag)
+    let name="kj";
+    const createUltag=()=>{
+            // document.getElementById("area").innerHTML +="<ul><li>ul</li><li>태그</li><li>생성</li></ul>"
+            // 문자형태를 작성할 때내용이 많으면 가독성이 떨어진다
+            // 템플릿문법 `` -> 빽팅
+            // 변수를 사용하고 싶을때(포메팅) -> ${변수명}
+            // 변수명 자체에 $를 사용하는 경우도 있다. -> let $_name="kj"
+            // jquery 문법에서 $사용 -> $()
+            document.getElementById("area").innerHTML+=`
+            <table border="5px">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>${name}</td>
+                </tr>
+            </table>
+            `
+        }
+    document.getElementById("btn3").addEventListener("click",createUltag)
+    </script>
+ 
+
+</body>
+</html>

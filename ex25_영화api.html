@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/jquery-3.7.1.min.js"></script>
+    
+</head>
+<body>
+    <div id="txt">
+        
+    </div>
+    <button id="btn">영화 데이터 갈취</button>
+    <script>
+
+        // 버튼을 클릭했을 때, api정보를 받아와 div영역에 출력
+        $("#btn").on("click",()=>{
+            // 제이쿼리에 ajax문법을 통해서 서버와 클라이언트 통신 코드
+            $.ajax({
+                // 1. 필수 -> 요청을 보낼 주소를 작성 url
+                url:"http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=b9a68c4ddfbaf4ae1242abe6715ee5f6&targetDt=20240330",
+ 
+                // 2. 데이터의 전송방식 (get, post)
+                // get -> url을 통해서 데이터를 주고받는 방법
+                // post -> 정보가 url에 노출되지 않는 경우
+                type: "get",
+
+                // 3. 데이터를 전송하는 공간 -> 클라이언트가 서버에게 데이터를 전송하는 경우
+                // data:"전송할 데이터"
+
+                // 4. 응답받은 데이터를 처리하는 공간 2가지 (성공, 실패)
+                success:(res)=>{
+
+                    // 모든 영화 정보를 출력 이름, 랭크, 개봉일자
+                    let data=res.boxOfficeResult.dailyBoxOfficeList
+                    let str=""
+                    for(let i=0;i<data.length;i++){
+                        str +=`
+                        <span>영화 순위 : ${data[i].rank}, </span>
+                        <span>영화 이름 : ${data[i].movieNm}, </span>
+                        <span>영화 개봉일 : ${data[i].openDt}</span>
+                        <br>
+                        `
+                    }
+                    $("#txt").append(str);
+                },
+                error:()=>{
+                    alert("실팰");
+                }
+                
+            })
+        })
+        
+    </script>
+</body>
+</html>

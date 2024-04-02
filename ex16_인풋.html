@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="txt">
+    <button id="btn">인풋값 수집</button>
+    
+    <script>
+        // input 태그의 데이터는 value속성 안에 저장이 된다 ★
+        // value로 가져오는 이유 -> input태그엔 content가 없다. 
+        // input태그는 입력받은 값을 value에 담고있으므로 .value로 가져와야한다.
+        // name -> 값을 구분지어주는 key역할 -> 서버와 통신할 때 필요
+
+        document.getElementById("btn").addEventListener("click",()=>{
+            alert(document.getElementById("txt").value)
+        })
+        
+    </script>
+</body>
+</html>

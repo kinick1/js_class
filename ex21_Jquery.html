@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="txt">수집할 텍스트</h1>
+
+    <script src="/jquery-3.7.1.min.js"></script>
+    <script>
+        // 요소에 접근하는 방식
+        // Jquery -> $("요소선택자")
+        let js =document.getElementById("txt");
+        console.log(js);
+        let jq=$("#txt");
+        console.log(jq)
+
+        // 2. 컨텐츠를 수집
+        document.getElementById("txt").innerText;
+        let jq_text=$("#txt").text();
+        console.log(jq_text);
+
+        // 3. 컨텐츠를 수정
+        // 텍스트 수정 .text("변경할 데이터")
+        // 태그를 포함 수정 -> .html("<태그>변경할 데이터</태그>")
+        document.getElementById("txt").innerText="변경"
+        $("#txt").text("<span>jquery로 변경</span>")
+        $("#txt").html("<span>span태그를 부여한 jquery로 변경</span>")
+
+        // 4. 스타일 변경
+        document.getElementById("txt").style.cssText="color:red"
+        $("#txt").css("color","blue")
+        $("#txt").css("font-size","50px")
+        // 복수 스타일 제어
+        $("#txt").css({color:"skyblue",fontSize:"100px"})
+    </script>
+    
+
+</body>
+</html>
